@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcode-lint"
+description = "Static analysis for sliced 3D printer gcode, run before you start the print."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Keivan Malhani" }]
+keywords = ["gcode", "3d-printing", "linter", "slicer", "static-analysis"]
+dynamic = ["version"]
+dependencies = []
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Printing",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+gcode-lint = "gcode_lint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/keivanmalhani/gcode-lint"
+Issues = "https://github.com/keivanmalhani/gcode-lint/issues"
+
+[tool.setuptools.dynamic]
+version = { attr = "gcode_lint.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
