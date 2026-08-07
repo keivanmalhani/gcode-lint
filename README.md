@@ -3,6 +3,8 @@
 [![CI](https://github.com/keivanmalhani/gcode-lint/actions/workflows/ci.yml/badge.svg)](https://github.com/keivanmalhani/gcode-lint/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+![gcode-lint demo: linting a sliced ABS print and reporting z-hop crossing printed material and first-layer part cooling, each with what, why and fix](docs/demo.gif)
+
 Static analysis for sliced 3D printer gcode. It reads the file once and tells
 you what is going to go wrong before you start a twelve hour print.
 
